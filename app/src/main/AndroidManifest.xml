@@ -52,6 +52,10 @@
             android:name="id.adhaniscuber.parkiryuk.AboutActivity"
             android:label="@string/action_about">
         </activity>
+        <activity
+            android:name="id.adhaniscuber.parkiryuk.DaftarparkirActivity"
+            android:label="@string/action_about">
+        </activity>
 
     </application>
 

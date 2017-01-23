@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Response;
@@ -47,6 +48,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        MagicButton magicButton = (MagicButton) findViewById(R.id.magic_button);
+        magicButton.setMagicButtonClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sulap = new Intent(MainActivity.this, DaftarparkirActivity.class);
+                startActivity(sulap);
+            }
+        });
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
