@@ -1,24 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="id.adhaniscuber.parkiryuk">
+    package="id.adhaniscuber.parkiryuk.multidex.AppController">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.ctproject.parkiryuk.permission.MAPS_RECEIVE"/>
+
+    <permission
+        android:name="id.adhaniscuber.parkiryuk.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"/>
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/MyMaterialTheme"
+        android:name="id.adhaniscuber.parkiryuk.AppController">
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value=" AIzaSyATYH3qNUiT5ZAoPXo7rYhuVyHf9WbdA58 "/>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <activity
-            android:name=".SplashActivity">
+            android:name="id.adhaniscuber.parkiryuk.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Home -->
         <activity
-            android:name=".MainActivity"
+            android:name="id.adhaniscuber.parkiryuk.MainActivity"
             android:label="@string/app_name">
+        </activity>
+        <!-- About -->
+        <activity
+            android:name="id.adhaniscuber.parkiryuk.AboutActivity"
+            android:label="@string/action_about">
         </activity>
 
     </application>

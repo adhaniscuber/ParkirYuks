@@ -8,6 +8,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import id.adhaniscuber.parkiryuk.multidex.AppController.R;
+
 /**
  * Created by adhaniscuber on 23/01/17.
  */
