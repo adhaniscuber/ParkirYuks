@@ -2,9 +2,12 @@ package id.adhaniscuber.parkiryuk;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.volley.Response;
@@ -47,6 +50,15 @@ public class DaftarparkirActivity extends Activity {
         listView = (ListView) findViewById(R.id.list);
         adapter = new CustomListAdapter(this, parkirDataList);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String nama = parkirDataList.get(i).getNama();
+                Intent intent = new Intent(DaftarparkirActivity.this, DetailActivity.class);
+                intent.putExtra("nama",nama);
+                startActivity(intent);
+            }
+        });
 
         pDialog = new ProgressDialog(this);
         // Showing progress dialog before making http request

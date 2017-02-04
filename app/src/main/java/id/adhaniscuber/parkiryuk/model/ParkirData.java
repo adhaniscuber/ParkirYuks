@@ -5,10 +5,14 @@ package id.adhaniscuber.parkiryuk.model;
  */
 
 public class ParkirData {
+    private String nama, jalan, kelurahan, kecamatan, kota, kodepos, motor, mobil;
+    private Double pylatitude, pylongitude;
 
-    private String nama, jalan, kelurahan, kecamatan, kota, kodepos, pylatitude, pylongitude, motor, mobil;
+    public ParkirData(){
 
-    public ParkirData() {
+    }
+
+    public ParkirData(String nama, Double pylongitude, Double pylatitude) {
         this.nama = nama;
         this.jalan = jalan;
         this.kelurahan = kelurahan;
@@ -77,20 +81,20 @@ public class ParkirData {
     }
 
     // pylatitude
-    public String getPylatitude() {
+    public Double getPylatitude() {
         return pylatitude;
     }
 
-    public void setPylatitude(String pylatitude) {
+    public void setPylatitude(Double pylatitude) {
         this.pylongitude = pylatitude;
     }
 
     // pylongitude
-    public String getPylongitude() {
+    public Double getPylongitude() {
         return pylongitude;
     }
 
-    public void setPylongitude(String pylongitude) {
+    public void setPylongitude(Double pylongitude) {
         this.pylongitude = pylongitude;
     }
 

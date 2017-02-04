@@ -57,6 +57,10 @@
             android:label="@string/action_about">
         </activity>
 
+        <activity
+            android:name="id.adhaniscuber.parkiryuk.DetailActivity"
+            android:label="Detail">
+        </activity>
     </application>
 
 </manifest>
