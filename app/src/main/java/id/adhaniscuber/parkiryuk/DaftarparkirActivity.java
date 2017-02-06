@@ -36,7 +36,7 @@ public class DaftarparkirActivity extends Activity {
     private static final String TAG = DaftarparkirActivity.class.getSimpleName();
 
     // Parkir JSON URL
-    private static final String url = "http://parkiryuk.pe.hu/read_alldata.php";
+    private static final String url = "http://parkiryuk.pe.hu/api.php";
     private ProgressDialog pDialog;
     private List<ParkirData> parkirDataList = new ArrayList<ParkirData>();
     private ListView listView;
@@ -80,7 +80,7 @@ public class DaftarparkirActivity extends Activity {
                                 JSONObject obj = response.getJSONObject(i);
                                 ParkirData parkirData = new ParkirData();
                                 parkirData.setNama(obj.getString("nama"));
-                                parkirData.setJalan(obj.getString("jalan"));
+                                parkirData.setAlamat(obj.getString("kota"));
                                 // adding movie to movies array
                                 parkirDataList.add(parkirData);
 

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public GoogleMap mMap;
     private ProgressDialog loading;
     private static  String TAG = MainActivity.class.getSimpleName();
-    private String sNama;
+    private String sNama, sAlamat;
     private Double flat, flong;
     private ArrayList<ParkirData> parkirData;
 
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private void sendRequestArray() {
 
-        String url = "http://parkiryuk.pe.hu/read_alldata.php";
+        String url = "http://parkiryuk.pe.hu/api.php";
         loading = ProgressDialog.show(this, "Mohon tunggu...", "Mengambil data...", false, false);
 
         JsonArrayRequest req = new JsonArrayRequest(url,
@@ -156,8 +156,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                 JSONObject lokasi = (JSONObject) response.get(park);
 
                                 sNama = lokasi.getString("nama");
-                                String sLat = lokasi.getString("latitude");
-                                String sLong = lokasi.getString("longitude");
+                                sAlamat = lokasi.getString("alamat");
+                                String sLat = lokasi.getString("lat");
+                                String sLong = lokasi.getString("long");
 
                                 //Toast.makeText(MainActivity.this, "" + sNama + sLat + sLong, Toast.LENGTH_SHORT).show();
 
@@ -170,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                         .position(fixlok)
                                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_markerpy)));
 
-                                parkirData.add(new ParkirData(sNama, flat,flong));
+                                parkirData.add(new ParkirData(sNama, sAlamat, flat,flong));
 
                                 //Toast.makeText(MainActivity.this, "" + fixlok, Toast.LENGTH_SHORT).show();
                             }
@@ -180,8 +181,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                     int posisi = Integer.parseInt(marker.getId().replace("m",""));
                                     Intent detail = new Intent(MainActivity.this, DetailActivity.class);
                                     detail.putExtra("nama", parkirData.get(posisi).getNama());
-                                    detail.putExtra("longitude", parkirData.get(posisi).getPylongitude());
-                                    detail.putExtra("latitude", parkirData.get(posisi).getPylatitude());
+                                    detail.putExtra("long", parkirData.get(posisi).getPylongitude());
+                                    detail.putExtra("lat", parkirData.get(posisi).getPylatitude());
                                     startActivity(detail);
                                 }
                             });
