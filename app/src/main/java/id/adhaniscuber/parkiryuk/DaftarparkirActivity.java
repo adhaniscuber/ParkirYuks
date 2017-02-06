@@ -81,6 +81,18 @@ public class DaftarparkirActivity extends Activity {
                                 ParkirData parkirData = new ParkirData();
                                 parkirData.setNama(obj.getString("nama"));
                                 parkirData.setAlamat(obj.getString("kota"));
+                                parkirData.setKota(obj.getString("kota"));
+                                parkirData.setJenis(obj.getString("jenis"));
+                                parkirData.setBiayaMotor(obj.getString("biaya_motor"));
+                                parkirData.setBiayaMobil(obj.getString("biaya_mobil"));
+                                parkirData.setBiayaMotorTambah(obj.getString("biaya_motor_tambah"));
+                                parkirData.setBiayaMobilTambah(obj.getString("biaya_mobil_tambah"));
+                                parkirData.setMaxBiayaMotor(obj.getString("max_biaya_motor"));
+                                parkirData.setMaxBiayaMobil(obj.getString("max_biaya_mobil"));
+                                parkirData.setKeterangan(obj.getString("keterangan"));
+                                parkirData.setMotor(obj.getString("motor"));
+                                parkirData.setMobil(obj.getString("mobil"));
+                                parkirData.setTotalKendaraan(obj.getString("total_kendaraan"));
                                 // adding movie to movies array
                                 parkirDataList.add(parkirData);
 

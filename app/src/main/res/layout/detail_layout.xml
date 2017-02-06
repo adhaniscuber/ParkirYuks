@@ -15,14 +15,205 @@
             layout="@layout/toolbar" />
 
     </LinearLayout>
-    <fragment
-        android:id="@+id/map2"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="match_parent"
-        android:layout_height="300dp" />
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/detailNama"/>
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_markerpy"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/deNama"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorPrimaryText"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_margin="10dp"
+        android:divider="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/deAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/deKota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ketersediaan parkir"
+            android:textSize="20dp"
+            android:gravity="center_horizontal" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:stretchColumns="3"
+            android:background="@color/colorPrimary">
+            <TableRow>
+                <TextView
+                    android:text="Mobil"
+                    android:gravity="center"
+                    android:padding="8dip" />
+                <TextView
+                    android:text="Motor"
+                    android:gravity="center"
+                    android:padding="8dip" />
+                <TextView
+                    android:text="Total"
+                    android:gravity="center"
+                    android:padding="8dip" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/deMobil"
+                    android:background="@color/colorPrimaryText"
+                    android:gravity="center"
+                    android:padding="8dip" />
+                <TextView
+                    android:id="@+id/deMotor"
+                    android:background="@color/colorPrimaryText"
+                    android:gravity="center"
+                    android:padding="8dip" />
+                <TextView
+                    android:id="@+id/deTotal"
+                    android:background="@color/colorPrimaryText"
+                    android:gravity="center"
+                    android:padding="8dip" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jenis"
+            android:textSize="20dp"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:id="@+id/deJenis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Biaya parkir"
+            android:textSize="20dp"
+            android:gravity="center_horizontal" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:stretchColumns="3"
+            android:background="@color/colorPrimary">
+            <TableRow>
+                <TextView
+                    android:text="Mobil"
+                    android:gravity="center"
+                    android:padding="8dip" />
+                <TextView
+                    android:text="Motor"
+                    android:gravity="center"
+                    android:padding="8dip" />
+                <TextView
+                    android:text="Max"
+                    android:gravity="center"
+                    android:padding="8dip" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/deBMotor"
+                    android:background="@color/colorPrimaryText"
+                    android:gravity="center"
+                    android:padding="8dip" />
+                <TextView
+                    android:id="@+id/deBMobil"
+                    android:background="@color/colorPrimaryText"
+                    android:gravity="center"
+                    android:padding="8dip" />
+                <TextView
+                    android:id="@+id/deMax"
+                    android:background="@color/colorPrimaryText"
+                    android:gravity="center"
+                    android:padding="8dip" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/deBMotorT"
+                    android:background="@color/colorPrimaryText"
+                    android:gravity="center"
+                    android:padding="8dip" />
+                <TextView
+                    android:id="@+id/deBMobilT"
+                    android:background="@color/colorPrimaryText"
+                    android:gravity="center"
+                    android:padding="8dip" />
+                <TextView
+                    android:id="@+id/de"
+                    android:background="@color/colorPrimaryText"
+                    android:gravity="center"
+                    android:padding="8dip" />
+            </TableRow>
+        </TableLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/deKeterangan"
+                android:textSize="14dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorPrimaryText"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </LinearLayout>

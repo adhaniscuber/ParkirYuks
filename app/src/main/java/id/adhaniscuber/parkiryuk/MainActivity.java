@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public GoogleMap mMap;
     private ProgressDialog loading;
     private static  String TAG = MainActivity.class.getSimpleName();
-    private String sNama, sAlamat;
+    private String sNama, sAlamat, sKota, sJenis, sBiayaMotor, sBiayaMobil, sBiayaMotorTambah, sBiayaMobilTambah, sMaxBiayaMotor, sMaxBiayaMobil, sKeterangan, sMotor, sMobil, sTotalKendaraan;
     private Double flat, flong;
     private ArrayList<ParkirData> parkirData;
 
@@ -157,6 +157,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                                 sNama = lokasi.getString("nama");
                                 sAlamat = lokasi.getString("alamat");
+                                sKota = lokasi.getString("kota");
+                                sJenis = lokasi.getString("jenis");
+                                sBiayaMotor = lokasi.getString("biaya_motor");
+                                sBiayaMobil = lokasi.getString("biaya_mobil");
+                                sBiayaMotorTambah = lokasi.getString("biaya_motor_tambah");
+                                sBiayaMobilTambah = lokasi.getString("biaya_mobil_tambah");
+                                sMaxBiayaMotor = lokasi.getString("max_biaya_motor");
+                                sMaxBiayaMobil = lokasi.getString("max_biaya_mobil");
+                                sKeterangan = lokasi.getString("keterangan");
+                                sMotor = lokasi.getString("motor");
+                                sMobil = lokasi.getString("mobil");
+                                sTotalKendaraan = lokasi.getString("total_kendaraan");
                                 String sLat = lokasi.getString("lat");
                                 String sLong = lokasi.getString("long");
 
@@ -171,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                         .position(fixlok)
                                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_markerpy)));
 
-                                parkirData.add(new ParkirData(sNama, sAlamat, flat,flong));
+                                parkirData.add(new ParkirData(sNama, sAlamat,sKota, sJenis, sBiayaMotor, sBiayaMobil, sBiayaMotorTambah, sBiayaMobilTambah, sMaxBiayaMotor, sMaxBiayaMobil, sKeterangan, sMotor, sMobil, sTotalKendaraan, flat,flong));
 
                                 //Toast.makeText(MainActivity.this, "" + fixlok, Toast.LENGTH_SHORT).show();
                             }
@@ -181,6 +193,20 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                                     int posisi = Integer.parseInt(marker.getId().replace("m",""));
                                     Intent detail = new Intent(MainActivity.this, DetailActivity.class);
                                     detail.putExtra("nama", parkirData.get(posisi).getNama());
+                                    detail.putExtra("alamat", parkirData.get(posisi).getAlamat());
+                                    detail.putExtra("kota", parkirData.get(posisi).getKota());
+                                    detail.putExtra("jenis", parkirData.get(posisi).getJenis());
+                                    detail.putExtra("biaya_motor", parkirData.get(posisi).getBiayaMotor());
+                                    detail.putExtra("biaya_mobil", parkirData.get(posisi).getBiayaMobil());
+                                    detail.putExtra("biaya_motor_tambah", parkirData.get(posisi).getBiayaMotorTambah());
+                                    detail.putExtra("biaya_mobil_tambah", parkirData.get(posisi).getBiayaMobilTambah());
+                                    detail.putExtra("max_biaya_motor", parkirData.get(posisi).getMaxBiayaMotor());
+                                    detail.putExtra("max_biaya_mobil", parkirData.get(posisi).getMaxBiayaMobil());
+                                    detail.putExtra("keterangan", parkirData.get(posisi).getKeterangan());
+                                    detail.putExtra("motor", parkirData.get(posisi).getMotor());
+                                    detail.putExtra("mobil", parkirData.get(posisi).getMobil());
+                                    detail.putExtra("total_kendaraan", parkirData.get(posisi).getTotalKendaraan());
+
                                     detail.putExtra("long", parkirData.get(posisi).getPylongitude());
                                     detail.putExtra("lat", parkirData.get(posisi).getPylatitude());
                                     startActivity(detail);

@@ -5,24 +5,33 @@ package id.adhaniscuber.parkiryuk.model;
  */
 
 public class ParkirData {
-    private String nama, alamat ,jalan, kelurahan, kecamatan, kota, kodepos, motor, mobil;
+    private String nama, alamat, kota, jenis, biayaMotor, biayaMotorTambah, biayaMobil, biayaMobilTambah, maxBiayaMotor, maxBiayaMobil, motor, mobil, totalKendaraan, keterangan;
     private Double pylatitude, pylongitude;
 
     public ParkirData(){
 
     }
 
-    public ParkirData(String nama, String alamat, Double pylongitude, Double pylatitude) {
+    public ParkirData(String nama, String alamat, String kota, String jenis, String biayaMotor, String biayaMobil, String biayaMotorTambah, String biayaMobilTambah, String maxBiayaMotor, String maxBiayaMobil, String keterangan, String motor, String mobil, String totalKendaraan, Double pylongitude, Double pylatitude) {
         this.nama = nama;
         this.alamat = alamat;
-        this.kelurahan = kelurahan;
-        this.kecamatan = kecamatan;
         this.kota = kota;
-        this.kodepos = kodepos;
-        this.pylatitude = pylatitude;
-        this.pylongitude = pylongitude;
+        this.jenis = jenis;
+        this.biayaMotor = biayaMotor ;
+        this.biayaMobil = biayaMobil ;
+        this.biayaMotorTambah = biayaMotorTambah ;
+        this.biayaMobilTambah = biayaMobilTambah ;
+        this.maxBiayaMotor = maxBiayaMotor ;
+        this.maxBiayaMobil = maxBiayaMobil ;
+        this.keterangan = keterangan ;
+        this.totalKendaraan = totalKendaraan ;
+
+
         this.motor = motor;
         this.mobil = mobil;
+
+        this.pylatitude = pylatitude;
+        this.pylongitude = pylongitude;
     }
 
 
@@ -44,24 +53,6 @@ public class ParkirData {
         this.alamat = alamat;
     }
 
-    // kelurahan
-    public String getKelurahan() {
-        return kelurahan;
-    }
-
-    public void setKelurahan(String kelurahan) {
-        this.kelurahan = kelurahan;
-    }
-
-    // kecamatan
-    public String getKecamatan() {
-        return kecamatan;
-    }
-
-    public void setKecamatan(String kecamatan) {
-        this.kecamatan = kecamatan;
-    }
-
     // kota
     public String getKota() {
         return kota;
@@ -71,13 +62,103 @@ public class ParkirData {
         this.kota = kota;
     }
 
-    // kodepos
-    public String getKodepos() {
-        return kodepos;
+    // jenis
+    public String getJenis() {
+        return jenis;
     }
 
-    public void setKodepos(String kodepos) {
-        this.kodepos = kodepos;
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+
+    // biaya motor
+    public String getBiayaMotor() {
+        return biayaMotor;
+    }
+
+    public void setBiayaMotor(String biayaMotor) {
+        this.biayaMotor = biayaMotor;
+    }
+
+    // biaya motor tambah
+    public String getBiayaMotorTambah() {
+        return biayaMotorTambah;
+    }
+
+    public void setBiayaMotorTambah(String biayaMotorTambah) {
+        this.biayaMotorTambah = biayaMotorTambah;
+    }
+
+    // biaya mobil
+    public String getBiayaMobil() {
+        return biayaMobil;
+    }
+
+    public void setBiayaMobil(String biayaMobil) {
+        this.biayaMobil = biayaMobil;
+    }
+
+    // biaya mobil tambah
+    public String getBiayaMobilTambah() {
+        return biayaMobilTambah;
+    }
+
+    public void setBiayaMobilTambah(String biayaMobilTambah) {
+        this.biayaMobilTambah = biayaMobilTambah;
+    }
+
+    // max biaya motor
+    public String getMaxBiayaMotor() {
+        return maxBiayaMotor;
+    }
+
+    public void setMaxBiayaMotor(String maxBiayaMotor) {
+        this.maxBiayaMotor= maxBiayaMotor;
+    }
+
+    // max biaya mobil
+    public String getMaxBiayaMobil() {
+        return maxBiayaMobil;
+    }
+
+    public void setMaxBiayaMobil(String maxBiayaMobil) {
+        this.maxBiayaMobil = maxBiayaMobil;
+    }
+
+    // motor
+    public String getMotor() {
+        return motor;
+    }
+
+    public void setMotor(String motor) {
+        this.motor = motor;
+    }
+
+    // mobil
+    public String getMobil() {
+        return mobil;
+    }
+
+    public void setMobil(String mobil) {
+        this.mobil = mobil;
+    }
+
+    // total kendaraan
+    public String getTotalKendaraan() {
+        return totalKendaraan;
+    }
+
+    public void setTotalKendaraan(String totalKendaraan) {
+        this.totalKendaraan = totalKendaraan;
+    }
+
+    // mobil
+    public String getKeterangan() {
+        return keterangan;
+    }
+
+    public void setKeterangan(String keterangan) {
+        this.keterangan = keterangan;
     }
 
     // pylatitude
@@ -98,21 +179,4 @@ public class ParkirData {
         this.pylongitude = pylongitude;
     }
 
-    // motor
-    public String getMotor() {
-        return motor;
-    }
-
-    public void setMotor(String motor) {
-        this.mobil = motor;
-    }
-
-    // mobil
-    public String getMobil() {
-        return mobil;
-    }
-
-    public void setMobil(String mobil) {
-        this.mobil = mobil;
-    }
 }

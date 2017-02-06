@@ -28,13 +28,10 @@ import static com.google.android.gms.maps.model.BitmapDescriptorFactory.fromReso
  * Created by adhaniscuber on 04/02/17.
  */
 
-public class DetailActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class DetailActivity extends AppCompatActivity {
 
-    private String nama;
-    private Double lat, lng;
+    private String nama, alamat, kota, jenis, biayaMotor, biayaMotorTambah, biayaMobil, biayaMobilTambah, maxBiayaMotor, maxBiayaMobil, motor, mobil, totalKendaraan, keterangan;
     private TextView text;
-    private GoogleMap mMap;
-    private GPSTracker gps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,46 +41,49 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map2);
-        mapFragment.getMapAsync(this);
-
         Intent uhuy = getIntent();
         nama = uhuy.getStringExtra("nama");
-        lat = uhuy.getDoubleExtra("latitude",0);
-        lng = uhuy.getDoubleExtra("longitude",0);
+        alamat = uhuy.getStringExtra("alamat");
+        kota = uhuy.getStringExtra("kota");
+        jenis = uhuy.getStringExtra("jenis");
+        biayaMotor = uhuy.getStringExtra("biaya_motor");
+        biayaMobil = uhuy.getStringExtra("biaya_mobil");
+        biayaMotorTambah = uhuy.getStringExtra("biaya_motor_tambah");
+        biayaMobilTambah = uhuy.getStringExtra("biaya_mobil_tambah");
+        maxBiayaMotor = uhuy.getStringExtra("max_biaya_motor");
+        maxBiayaMobil = uhuy.getStringExtra("max_biaya_mobil");
+        keterangan = uhuy.getStringExtra("keterangan");
+        motor = uhuy.getStringExtra("motor");
+        mobil = uhuy.getStringExtra("mobil");
+        totalKendaraan = uhuy.getStringExtra("total_kendaraan");
 
-        text = (TextView) findViewById(R.id.detailNama);
-        text.setText(nama+" "+lat+" "+lng);
+
+        text = (TextView) findViewById(R.id.deNama);
+        text.setText(nama);
+        text = (TextView) findViewById(R.id.deAlamat);
+        text.setText(alamat);
+        text = (TextView) findViewById(R.id.deKota);
+        text.setText(kota);
+        text = (TextView) findViewById(R.id.deNama);
+        text.setText(jenis);
+        text = (TextView) findViewById(R.id.deBMotor);
+        text.setText(biayaMotor);
+        text = (TextView) findViewById(R.id.deBMobil);
+        text.setText(biayaMobil);
+        text = (TextView) findViewById(R.id.deBMotorT);
+        text.setText(biayaMotorTambah);
+        text = (TextView) findViewById(R.id.deBMobilT);
+        text.setText(biayaMobilTambah);
+        text = (TextView) findViewById(R.id.deKeterangan);
+        text.setText(keterangan);
+        text = (TextView) findViewById(R.id.deMotor);
+        text.setText(motor);
+        text = (TextView) findViewById(R.id.deMobil);
+        text.setText(mobil);
+        text = (TextView) findViewById(R.id.deTotal);
+        text.setText(totalKendaraan);
 
 
-
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-
-        mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        mMap.getUiSettings().setZoomControlsEnabled(true);
-        mMap.getUiSettings().setAllGesturesEnabled(true);
-        mMap.getUiSettings().setMyLocationButtonEnabled(false);
-        mMap.getUiSettings().setCompassEnabled(true);
-        mMap.getUiSettings().setMapToolbarEnabled(false);
-
-        Intent uhuy = getIntent();
-        nama = uhuy.getStringExtra("nama");
-        lat = uhuy.getDoubleExtra("latitude",0);
-        lng = uhuy.getDoubleExtra("longitude",0);
-
-        LatLng latLng = new LatLng(lat, lng);
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
-        mMap.addMarker(new MarkerOptions()
-                            .position(latLng)
-                            .title(nama)
-                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_markerpy)))
-                            .showInfoWindow();
 
     }
 }

@@ -66,7 +66,7 @@ public class CustomListAdapter extends BaseAdapter {
         nama.setText(p.getNama());
 
         // jalan
-        jalan.setText(p.getAlamat());
+        jalan.setText(p.getKota());
 
         return convertView;
     }
