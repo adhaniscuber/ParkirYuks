@@ -41,6 +41,7 @@ public class DaftarparkirActivity extends Activity {
     private List<ParkirData> parkirDataList = new ArrayList<ParkirData>();
     private ListView listView;
     private CustomListAdapter adapter;
+    private String sNama, sAlamat, sKota, sJenis, sBiayaMotor, sBiayaMobil, sBiayaMotorTambah, sBiayaMobilTambah, sMaxBiayaMotor, sMaxBiayaMobil, sKeterangan, sMotor, sMobil, sTotalKendaraan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +54,38 @@ public class DaftarparkirActivity extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String nama = parkirDataList.get(i).getNama();
-                Intent intent = new Intent(DaftarparkirActivity.this, DetailActivity.class);
-                intent.putExtra("nama",nama);
-                startActivity(intent);
+                sNama = parkirDataList.get(i).getNama();
+                sAlamat = parkirDataList.get(i).getAlamat();
+                sKota = parkirDataList.get(i).getKota();
+                sJenis = parkirDataList.get(i).getJenis();
+                sBiayaMotor = parkirDataList.get(i).getBiayaMotor();
+                sBiayaMobil = parkirDataList.get(i).getBiayaMobil();
+                sBiayaMotorTambah = parkirDataList.get(i).getBiayaMotorTambah();
+                sBiayaMobilTambah = parkirDataList.get(i).getBiayaMobilTambah();
+                sMaxBiayaMotor = parkirDataList.get(i).getMaxBiayaMotor();
+                sMaxBiayaMobil = parkirDataList.get(i).getMaxBiayaMobil();
+                sKeterangan = parkirDataList.get(i).getKeterangan();
+                sMotor = parkirDataList.get(i).getMotor();
+                sMobil = parkirDataList.get(i).getMobil();
+                sTotalKendaraan = parkirDataList.get(i).getTotalKendaraan();
+
+                Intent detail = new Intent(DaftarparkirActivity.this, DetailActivity.class);
+
+                detail.putExtra("nama", sNama);
+                detail.putExtra("alamat", sAlamat);
+                detail.putExtra("kota", sKota);
+                detail.putExtra("jenis", sJenis);
+                detail.putExtra("biaya_motor", sBiayaMotor);
+                detail.putExtra("biaya_mobil", sBiayaMobil);
+                detail.putExtra("biaya_motor_tambah", sBiayaMotorTambah);
+                detail.putExtra("biaya_mobil_tambah", sBiayaMobilTambah);
+                detail.putExtra("max_biaya_motor", sMaxBiayaMotor);
+                detail.putExtra("max_biaya_mobil", sMaxBiayaMobil);
+                detail.putExtra("keterangan", sKeterangan);
+                detail.putExtra("motor", sMotor);
+                detail.putExtra("mobil", sMobil);
+                detail.putExtra("total_kendaraan", sTotalKendaraan);
+                startActivity(detail);
             }
         });
 
@@ -80,7 +109,7 @@ public class DaftarparkirActivity extends Activity {
                                 JSONObject obj = response.getJSONObject(i);
                                 ParkirData parkirData = new ParkirData();
                                 parkirData.setNama(obj.getString("nama"));
-                                parkirData.setAlamat(obj.getString("kota"));
+                                parkirData.setAlamat(obj.getString("alamat"));
                                 parkirData.setKota(obj.getString("kota"));
                                 parkirData.setJenis(obj.getString("jenis"));
                                 parkirData.setBiayaMotor(obj.getString("biaya_motor"));

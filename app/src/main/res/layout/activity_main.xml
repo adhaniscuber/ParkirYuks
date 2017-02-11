@@ -35,7 +35,7 @@
         app:button_icon_height="25dp"
         app:button_icon_width="25dp"
         app:expandable_area_color="@color/colorPrimaryDark"
-        app:hide_text="List Parkir"
+        app:hide_text="Daftar Parkir"
         app:icon_button_color="@color/colorPrimary"
         app:magic_button_size="50dp" />
 

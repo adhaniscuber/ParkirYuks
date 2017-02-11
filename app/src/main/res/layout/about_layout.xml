@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:livebutton="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
@@ -25,11 +26,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:baselineAlignBottom="true"
-            android:src="@drawable/ic_city_bg" />
+            android:src="@drawable/ic_city_bg"
+            />
 
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/relative"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -67,19 +70,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="@string/quote"
-            android:textColor="@color/colorIcons"
-            android:textSize="14sp"
-            android:textStyle="italic"
-            android:layout_margin="30dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/dev"
             android:textColor="@color/colorIcons"
             android:layout_above="@+id/textView2"
@@ -96,6 +86,50 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:id="@+id/textView2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/quote"
+            android:textColor="@color/colorIcons"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:layout_marginTop="14dp"
+            android:layout_below="@+id/textView5"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/textView6" />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:text="Website"
+            android:autoLink="web"
+            android:clickable="true"
+            android:id="@+id/button_su"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimaryText"
+            android:onClick="goToWeb"
+            android:layout_above="@+id/textView3"
+            android:layout_centerHorizontal="true"></Button>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:clickable="true"
+            android:autoLink="web"
+            android:cursorVisible="true"
+            android:layout_width="120dp"
+            android:id="@+id/button_so"
+            android:textColor="@color/colorPrimaryText"
+            android:text="Kontribusi"
+            android:background="@color/colorPrimaryDark"
+            android:linksClickable="true"
+            android:onClick="goToKontribusi"
+            android:layout_above="@+id/button_su"
+            android:layout_alignLeft="@+id/button_su"
+            android:layout_alignStart="@+id/button_su"></Button>
+
 
     </RelativeLayout>
 

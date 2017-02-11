@@ -60,26 +60,43 @@ public class DetailActivity extends AppCompatActivity {
 
         text = (TextView) findViewById(R.id.deNama);
         text.setText(nama);
+
         text = (TextView) findViewById(R.id.deAlamat);
         text.setText(alamat);
+
         text = (TextView) findViewById(R.id.deKota);
         text.setText(kota);
-        text = (TextView) findViewById(R.id.deNama);
+
+        text = (TextView) findViewById(R.id.deJenis);
         text.setText(jenis);
+
         text = (TextView) findViewById(R.id.deBMotor);
         text.setText(biayaMotor);
+
         text = (TextView) findViewById(R.id.deBMobil);
         text.setText(biayaMobil);
+
         text = (TextView) findViewById(R.id.deBMotorT);
         text.setText(biayaMotorTambah);
+
         text = (TextView) findViewById(R.id.deBMobilT);
         text.setText(biayaMobilTambah);
+
+        text = (TextView) findViewById(R.id.deMaxMt);
+        text.setText(maxBiayaMotor);
+
+        text = (TextView) findViewById(R.id.deMaxMb);
+        text.setText(maxBiayaMobil);
+
         text = (TextView) findViewById(R.id.deKeterangan);
         text.setText(keterangan);
+
         text = (TextView) findViewById(R.id.deMotor);
         text.setText(motor);
+
         text = (TextView) findViewById(R.id.deMobil);
         text.setText(mobil);
+
         text = (TextView) findViewById(R.id.deTotal);
         text.setText(totalKendaraan);
 

@@ -27,7 +27,7 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:src="@drawable/ic_markerpy"/>
 
         <TextView
@@ -36,6 +36,7 @@
             android:id="@+id/deNama"
             android:textSize="25dp"
             android:textStyle="bold"
+            android:text="Parkir Umum A"
             android:layout_marginLeft="10dp"
             android:textColor="@color/colorPrimaryText"/>
     </LinearLayout>
@@ -50,16 +51,19 @@
 
         <TextView
             android:id="@+id/deAlamat"
+            android:text="jalan meruya Selatan no.50 meruya selatan, Kembangan, 11650"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
+            android:textSize="17dp"
             android:layout_marginLeft="10dp" />
 
         <TextView
             android:id="@+id/deKota"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
+            android:text="Jakarta barat"
+            android:textStyle="bold"
+            android:textSize="18dp"
             android:layout_marginLeft="10dp" />
     </LinearLayout>
 
@@ -71,7 +75,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ketersediaan parkir"
-            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textSize="16dp"
             android:gravity="center_horizontal" />
 
         <TableLayout
@@ -83,15 +88,21 @@
             <TableRow>
                 <TextView
                     android:text="Mobil"
+                    android:textColor="@color/colorPrimaryText"
                     android:gravity="center"
+                    android:textSize="16dp"
                     android:padding="8dip" />
                 <TextView
                     android:text="Motor"
+                    android:textColor="@color/colorPrimaryText"
                     android:gravity="center"
+                    android:textSize="16dp"
                     android:padding="8dip" />
                 <TextView
                     android:text="Total"
+                    android:textColor="@color/colorPrimaryText"
                     android:gravity="center"
+                    android:textSize="16dp"
                     android:padding="8dip" />
             </TableRow>
             <TableRow>
@@ -99,16 +110,19 @@
                     android:id="@+id/deMobil"
                     android:background="@color/colorPrimaryText"
                     android:gravity="center"
+                    android:textSize="16dp"
                     android:padding="8dip" />
                 <TextView
                     android:id="@+id/deMotor"
                     android:background="@color/colorPrimaryText"
                     android:gravity="center"
+                    android:textSize="16dp"
                     android:padding="8dip" />
                 <TextView
                     android:id="@+id/deTotal"
                     android:background="@color/colorPrimaryText"
                     android:gravity="center"
+                    android:textSize="16dp"
                     android:padding="8dip" />
             </TableRow>
         </TableLayout>
@@ -123,20 +137,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Jenis"
-            android:textSize="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
             android:gravity="center_horizontal" />
         <TextView
             android:id="@+id/deJenis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="18dp"
+            android:text="Bayar Sekali"
+            android:textColor="@color/colorPrimaryDark"
             android:gravity="center_horizontal" />
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Biaya parkir"
-            android:textSize="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
             android:gravity="center_horizontal" />
 
         <TableLayout
@@ -147,73 +166,111 @@
             android:background="@color/colorPrimary">
             <TableRow>
                 <TextView
-                    android:text="Mobil"
+
                     android:gravity="center"
+                    android:padding="8dip"
+                    android:textSize="14dp"
+                    android:background="@color/colorPrimaryText"/>
+                <TextView
+                    android:text="Mobil"
+                    android:textColor="@color/colorPrimaryText"
+                    android:gravity="center"
+                    android:textSize="14dp"
                     android:padding="8dip" />
                 <TextView
                     android:text="Motor"
+                    android:textColor="@color/colorPrimaryText"
                     android:gravity="center"
+                    android:textSize="14dp"
                     android:padding="8dip" />
-                <TextView
-                    android:text="Max"
-                    android:gravity="center"
-                    android:padding="8dip" />
+
             </TableRow>
             <TableRow>
+                <TextView
+                    android:text="Awal"
+                    android:textColor="@color/colorPrimaryText"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:padding="8dip" />
                 <TextView
                     android:id="@+id/deBMotor"
                     android:background="@color/colorPrimaryText"
                     android:gravity="center"
+                    android:textSize="14dp"
                     android:padding="8dip" />
                 <TextView
                     android:id="@+id/deBMobil"
                     android:background="@color/colorPrimaryText"
                     android:gravity="center"
-                    android:padding="8dip" />
-                <TextView
-                    android:id="@+id/deMax"
-                    android:background="@color/colorPrimaryText"
-                    android:gravity="center"
+                    android:textSize="14dp"
                     android:padding="8dip" />
             </TableRow>
             <TableRow>
                 <TextView
+                    android:text="Berikutnya"
+                    android:textColor="@color/colorPrimaryText"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:padding="8dip" />
+                <TextView
                     android:id="@+id/deBMotorT"
                     android:background="@color/colorPrimaryText"
                     android:gravity="center"
+                    android:textSize="14dp"
                     android:padding="8dip" />
                 <TextView
                     android:id="@+id/deBMobilT"
                     android:background="@color/colorPrimaryText"
                     android:gravity="center"
+                    android:textSize="14dp"
+                    android:padding="8dip" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Maximal"
+                    android:textColor="@color/colorPrimaryText"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:textSize="14dp"
                     android:padding="8dip" />
                 <TextView
-                    android:id="@+id/de"
+                    android:id="@+id/deMaxMt"
                     android:background="@color/colorPrimaryText"
                     android:gravity="center"
+                    android:textSize="14dp"
+                    android:padding="8dip" />
+                <TextView
+                    android:id="@+id/deMaxMb"
+                    android:background="@color/colorPrimaryText"
+                    android:gravity="center"
+                    android:textSize="14dp"
                     android:padding="8dip" />
             </TableRow>
         </TableLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="5dp"
-            android:padding="10dp"
-            android:background="@color/colorPrimaryDark"
-            android:gravity="center_vertical">
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:background="@color/colorPrimary">
 
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/deKeterangan"
                 android:textSize="14dp"
+                android:text=""
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/colorPrimaryText"/>
-        </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>
