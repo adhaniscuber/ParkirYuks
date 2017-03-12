@@ -2,6 +2,7 @@ package id.adhaniscuber.parkiryuk;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
@@ -18,11 +19,18 @@ public class SplashActivity extends Activity {
 
     //splashscreen timer
     private static int SPLASH_TIME_OUT = 3000;
+    MediaPlayer soundbackground;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
+
+        soundbackground = MediaPlayer.create(this, R.raw.carlock);
+
+        soundbackground.setLooping(false);
+        soundbackground.setVolume(1,1);
+        soundbackground.start();
 
         ImageView imageView = (ImageView) findViewById(R.id.logopy);
 
